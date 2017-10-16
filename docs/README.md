@@ -9,20 +9,21 @@
 
 [sqaiyan/netmusic-node](https://github.com/sqaiyan/netmusic-node)
 
+[Binaryify/NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
+
 ## 工作原理
 跨站请求伪造 (CSRF), 伪造请求头,调用官方 API
 
 ## 版本新特性  
-### 2.6.5 | 2017.7.16
-优化 CORS 设置
+### 1.0.2 | 2017.10.13
+无
 
-### 2.6.4 | 2017.7.16
+### 1.0.1 | 2017.10.13
+优化 CORS 设置
 添加缓存机制和随机 UA 机制 感谢[@u3u](https://github.com/u3u) 
 [issue:77](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/77)
 优化请求代码 感谢 [@huhuime](https://github.com/huhuime) 
 [issue:83](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/83)
-
-### 2.5.0 | 2017.4.29
 增加 mv/专辑/歌单评论接口,增加云盘相关接口,增加获取用户动态/信息接口,增加关注/粉丝列表接口,增加收藏歌单接口,增加相似 mv/歌曲/用户接口,增加 banner 接口,增加刷新登录接口,增加电台相关接口,补充评论接口,更新文档
 
 ## 功能特性
@@ -90,7 +91,7 @@
 
 ## 安装  
 ``` shell
-$ git clone git@github.com:Binaryify/NeteaseCloudMusicApi.git
+$ git clone https://github.com/ywang1988/NeteaseCloudMusicApi
 $ npm install
 ```
 ## 运行
@@ -153,7 +154,7 @@ $ set PORT=4000 && node app.js
 `/login?email=xxx@163.com&password=yyy`  
 
 返回数据如下图:  
-![登录](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/%E7%99%BB%E5%BD%95.png)
+![登录](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/%E7%99%BB%E5%BD%95.png)
 
 
 完成登录后,会在浏览器保存一个 Cookies 用作登录凭证,大部分 API 都需要用到这个 Cookies
@@ -203,7 +204,7 @@ $ set PORT=4000 && node app.js
 `/user/playlist?uid=32953014`  
 
 返回数据如下图:  
-![用户歌单](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/%E7%94%A8%E6%88%B7%E6%AD%8C%E5%8D%95.png)
+![用户歌单](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/%E7%94%A8%E6%88%B7%E6%AD%8C%E5%8D%95.png)
 
 ### 获取用户电台
 说明:登陆后调用此接口,传入用户 id, 可以获取用户电台  
@@ -316,7 +317,7 @@ $ set PORT=4000 && node app.js
 `/playlist/detail?id=24381616`  
 
 返回数据如下图:  
-![歌单详情](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/%E6%AD%8C%E5%8D%95%E8%AF%A6%E6%83%85.png)
+![歌单详情](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/%E6%AD%8C%E5%8D%95%E8%AF%A6%E6%83%85.png)
 
 ### 获取音乐 url
 说明:使用歌单详情接口后,能得到的音乐的 id, 但不能得到的音乐 url, 调用此接口,传入的音乐 id(可多个,用逗号隔开),可以获取对应的音乐的 url(不需要登录)  
@@ -332,7 +333,7 @@ $ set PORT=4000 && node app.js
 `/music/url?id=347230,347231` 
 
 返回数据如下图:  
-![音乐 url](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/%E9%9F%B3%E4%B9%90%20url.png)
+![音乐 url](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/%E9%9F%B3%E4%B9%90%20url.png)
 
 ### 搜索
 说明:调用此接口,传入搜索关键词可以搜索该音乐/专辑/歌手/歌单/用户,关键词可以多个,以空格隔开,如"周杰伦 搁浅"(不需要登录),搜索获取的 mp3url 不能直接用,可通过 `/music/url` 接口传入歌曲 id 获取具体的播放链接  
@@ -363,7 +364,7 @@ $ set PORT=4000 && node app.js
 `/search?keywords=海阔天空`  
 
 返回数据如下图: 
-![搜索音乐](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/%E6%90%9C%E7%B4%A2.png)
+![搜索音乐](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/%E6%90%9C%E7%B4%A2.png)
 
 ### 搜索建议
 说明:调用此接口,传入搜索关键词可获得搜索建议,搜索结果同时包含单曲,歌手,歌单,mv 信息 
@@ -433,7 +434,7 @@ $ set PORT=4000 && node app.js
 `/lyric?id=347230`  
 
 返回数据如下图: 
-![获取歌词](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/%E6%AD%8C%E8%AF%8D.png)
+![获取歌词](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/%E6%AD%8C%E8%AF%8D.png)
 
 ### 歌曲评论
 说明:调用此接口,传入音乐 id和 limit 参数, 可获得该音乐的所有评论(不需要登录)  
@@ -453,7 +454,7 @@ $ set PORT=4000 && node app.js
 `/comment/music?id=186016&limit=1` 对应晴天评论 
 
 返回数据如下图: 
-![获取评论](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/comment.png)
+![获取评论](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/comment.png)
 
 
 ### 专辑评论
@@ -574,7 +575,7 @@ $ set PORT=4000 && node app.js
 `/song/detail?ids=347230`  
 
 返回数据如下图: 
-![获取歌曲详情](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/songDetail.png)
+![获取歌曲详情](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/songDetail.png)
 
 
 ### 获取专辑内容
@@ -590,7 +591,7 @@ $ set PORT=4000 && node app.js
 `/album?id=32311`  
 
 返回数据如下图: 
-![获取专辑内容](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/%E4%B8%93%E8%BE%91.png)
+![获取专辑内容](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/%E4%B8%93%E8%BE%91.png)
 
 ### 获取歌手单曲
 说明:调用此接口,传入歌手 id,可获得歌手单曲
@@ -605,7 +606,7 @@ $ set PORT=4000 && node app.js
 `/artists?id=6452`  
 
 返回数据如下图: 
-![获取歌手单曲](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/artists.png)
+![获取歌手单曲](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/artists.png)
 
 ### 获取歌手 mv
 说明:调用此接口,传入歌手 id,可获得歌手 mv 信息,具体 mv 播放地址可调用`/mv`传入此接口获得的mvid 来拿到,如:
@@ -638,7 +639,7 @@ $ set PORT=4000 && node app.js
 `/artist/album?id=6452&limit=30` (周杰伦)
 
 返回数据如下图: 
-![获取专辑内容](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/artist_album.png)
+![获取专辑内容](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/artist_album.png)
 
 ### 获取歌手描述
 说明:调用此接口,传入歌手 id,可获得歌手描述
@@ -724,7 +725,7 @@ $ set PORT=4000 && node app.js
 `/recommend/resource`  
 
 返回数据如下图: 
-![每日推荐歌单](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/%E6%8E%A8%E8%8D%90%E6%AD%8C%E5%8D%95.png)
+![每日推荐歌单](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/%E6%8E%A8%E8%8D%90%E6%AD%8C%E5%8D%95.png)
 
 ### 获取每日推荐歌曲
 说明:调用此接口,可获得每日推荐歌曲(需要登录)  
@@ -736,7 +737,7 @@ $ set PORT=4000 && node app.js
 `/recommend/songs`  
 
 返回数据如下图: 
-![每日推荐歌曲](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/%E6%8E%A8%E8%8D%90%E6%AD%8C%E6%9B%B2.png)
+![每日推荐歌曲](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/%E6%8E%A8%E8%8D%90%E6%AD%8C%E6%9B%B2.png)
 
 
 ### 私人 FM
@@ -750,7 +751,7 @@ $ set PORT=4000 && node app.js
 
 返回数据如下图: 
 
-![私人 FM](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/personal_fm.png)
+![私人 FM](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/personal_fm.png)
 
 ### 签到
 说明:调用此接口,传入签到类型(可不传,默认安卓端签到),可签到(需要登录),其中安卓端签到可获得3点经验, web/PC 端签到可获得2点经验  
@@ -765,9 +766,9 @@ $ set PORT=4000 && node app.js
 
 返回数据如下图: 
 
-![签到成功](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/signinSuccess.png)
+![签到成功](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/signinSuccess.png)
 
-![签到失败](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/signinError.png)
+![签到失败](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/signinError.png)
 
 
 ### 喜欢音乐
@@ -787,11 +788,11 @@ $ set PORT=4000 && node app.js
 
 返回数据如下图: 
 
-![喜欢成功](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/like.png)
+![喜欢成功](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/like.png)
 
 喜欢成功则返回数据的 code 为200,其余为失败
 
-![喜欢成功截图](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/likeSuccess.png)
+![喜欢成功截图](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/likeSuccess.png)
 
 
 
@@ -809,7 +810,7 @@ $ set PORT=4000 && node app.js
 
 返回数据如下图: 
 
-![移除成功](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/fm_trash.png)
+![移除成功](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/fm_trash.png)
 
 ### 歌单(网友精选碟)
 说明:调用此接口,可获取网友精选碟歌单  
@@ -825,7 +826,7 @@ $ set PORT=4000 && node app.js
 
 返回数据如下图: 
 
-![精选碟](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/top_playlist.png)
+![精选碟](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/top_playlist.png)
 
 ### 新碟上架
 说明:调用此接口,可获取新碟上架列表,如需具体音乐信息需要调用获取专辑列表接口 `/album` ,然后传入 id, 如 `/album?id=32311&limit=30`     
@@ -843,7 +844,7 @@ $ set PORT=4000 && node app.js
 
 返回数据如下图: 
 
-![新碟上架](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/new_albums.png)
+![新碟上架](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/new_albums.png)
 
 ### 热门歌手
 说明:调用此接口,可获取热门歌手数据 
@@ -861,7 +862,7 @@ $ set PORT=4000 && node app.js
 
 返回数据如下图: 
 
-![热门歌手](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/top_artists.png)
+![热门歌手](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/top_artists.png)
 
 ### 最新 mv
 说明:调用此接口,可获取最新 mv
@@ -958,7 +959,7 @@ $ set PORT=4000 && node app.js
 
 返回数据如下图: 
 
-![热门歌手](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/mv.png)
+![热门歌手](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/mv.png)
 
 
 ### 播放 mv
@@ -975,7 +976,7 @@ $ set PORT=4000 && node app.js
 
 如下图: 
 
-![播放视频](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/play_mv.png)
+![播放视频](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/play_mv.png)
 
 
 ### 排行榜
@@ -1017,7 +1018,7 @@ $ set PORT=4000 && node app.js
 
 返回数据如下图: 
 
-![排行榜](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/top_list.png)
+![排行榜](https://raw.githubusercontent.com/ywang1988/NeteaseCloudMusicApi/master/static/top_list.png)
 
 
 ### 云盘
@@ -1107,4 +1108,4 @@ $ set PORT=4000 && node app.js
 docsify 是一个动态生成文档网站的工具。不同于 GitBook、Hexo 的地方是它不会生成将 .md 转成 .html 文件，所有转换工作都是在运行时进行。
 
 ## License
-[The MIT License (MIT)](https://github.com/Binaryify/NeteaseCloudMusicApi/blob/master/LICENSE)
+[The MIT License (MIT)](https://github.com/ywang1988/NeteaseCloudMusicApi/blob/master/LICENSE)
