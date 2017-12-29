@@ -7,7 +7,7 @@
 - 更完善的文档
 
 
-[GitHub](https://github.com/ywang1988/NeteaseCloudMusicApi)
+[GitHub](https://github.com/upcwangying/NeteaseCloudMusicApi.git)
 [Get Started](#neteasecloudmusicapi)
 
 ![color](#ffffff)
