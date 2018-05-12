@@ -1,5 +1,5 @@
 # Using a compact OS
-FROM daocloud.io/library/node:6.11.3-slim
+FROM node:9.11.1-slim
 
 MAINTAINER YING WANG <864891814@qq.com>
 
