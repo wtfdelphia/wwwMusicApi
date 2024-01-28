@@ -155,7 +155,7 @@
 
 ## 安装  
 ``` shell
-$ git clone git@github.com:Binaryify/NeteaseCloudMusicApi.git
+$ git clone git@github.com:wtfdelphia/wwwMusicApi.git
 $ npm install
 ```
 ## 运行
